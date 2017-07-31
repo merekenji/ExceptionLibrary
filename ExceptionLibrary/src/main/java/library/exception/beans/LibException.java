@@ -44,9 +44,6 @@ public class LibException {
 		if(o.getClass() != this.getClass()) {
 			return false;
 		}
-		if(((LibException)o) == null || ((LibException)o).getExceptionName() == null) {
-			throw new NullPointerException();
-		}
 		return ((LibException)o).getExceptionName().equals(this.exceptionName);
 	}
 	@Override
