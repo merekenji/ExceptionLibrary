@@ -23,37 +23,40 @@ import library.exception.beans.LibException;
 public class ReadFromXML {
 	
 	private static Document doc;
-	private static final String PATH = "D:/exception_actions.xml";
+	private static String path;
 	private static Map<LibException, List<Action>> exceptionMap = new HashMap<>();
 	
 	private ReadFromXML() {
 	}
 	
-	public static Map<LibException, List<Action>> extract() {
+	public static Map<LibException, List<Action>> extract(String p) {
+		path = p;
 		parseXmlFile();
 		parseDocument();
 		return exceptionMap;
 	}
 	
 	private static void parseXmlFile(){
-		File file = new File(PATH);
+		File file = new File(path);
 		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 
 		try {
 			DocumentBuilder db = dbf.newDocumentBuilder();
 			doc = db.parse(file);
 		}catch(ParserConfigurationException pce) {
-			pce.printStackTrace();
+			System.out.println(pce.getMessage());
 		}catch(SAXException se) {
-			se.printStackTrace();
+			System.out.println(se.getMessage());
 		}catch(IOException ioe) {
-			ioe.printStackTrace();
+			System.out.println(ioe.getMessage());
 		}
 	}
 	
 	private static void parseDocument(){
-		Element docEle = doc.getDocumentElement();
-		retrieveProjects(docEle.getElementsByTagName("project"));
+		if(doc != null) {
+			Element docEle = doc.getDocumentElement();
+			retrieveProjects(docEle.getElementsByTagName("project"));
+		}
 	}
 	
 	private static void retrieveProjects(NodeList nl) {
