@@ -4,9 +4,7 @@ import java.util.Map;
 
 public abstract class GeneralAction {
 	
-	public void executeAction(Map<String, String> attributes) {
-		System.out.println("hello");
-	}
+	public abstract void executeAction(Map<String, String> attributes);
 	public static GeneralAction newInstance() {
 		return null;
 	}
