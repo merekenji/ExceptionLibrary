@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<exception_library>
+	<project name="Game Scheduler">
+		<module name="Add Player">
+			<exception type="java.lang.NullPointerException">
+				<action>
+					<EmailAction to="support@helpdesk.com"/>
+					<LogAction message="NullPointerException"/>
+				</action>
+			</exception>
+			<exception type="java.lang.ArrayStoreException">
+				<action>
+					<EmailAction to="ticket@helpdesk.com"/>
+					<SMSAction to="999"/>
+				</action>
+			</exception>
+		</module>
+		<module name="Add Game">
+			<exception type="java.lang.ArrayIndexOutOfBoundsException">
+				<action>
+					<SMSAction to="995"/>
+					<EmailAction message="Help! ArrayIndexOutOfBounds!"/>
+				</action>
+			</exception>
+			<exception type="java.lang.ClassCastException">
+				<action>
+					<SMSAction to="19001126868"/>
+					<EmailAction message="Danger! Class casted wrongly"/>
+				</action>
+			</exception>
+		</module>
+	</project>
+	<project name="Account System">
+		<module name="Add Account">
+			<exception type="java.lang.ArithmeticException">
+				<action>
+					<EmailAction to="support@helpdesk.com"/>
+					<LogAction message="Such as divide by zero"/>
+				</action>
+			</exception>
+			<exception type="java.lang.IllegalArgumentException">
+				<action>
+					<EmailAction to="ticket@helpdesk.com"/>
+					<SMSAction to="995"/>
+				</action>
+			</exception>
+		</module>
+		<module name="View Balance">
+			<exception type="java.lang.ArrayIndexOutOfBoundsException">
+				<action>
+					<EmailAction to="Sagar"/>
+					<LogAction message="Ask him for help!"/>
+				</action>
+			</exception>
+			<exception type="java.lang.ClassCastException">
+				<action>
+					<SMSAction to="19001126868"/>
+					<LogAction message="Check your code"/>
+				</action>
+			</exception>
+		</module>
+	</project>
+</exception_library>
