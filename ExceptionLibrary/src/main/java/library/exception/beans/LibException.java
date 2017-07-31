@@ -38,6 +38,12 @@ public class LibException {
 	
 	@Override
 	public boolean equals(Object o) {
+		if(o == null) {
+			return false;
+		}
+		if(o.getClass() != this.getClass()) {
+			return false;
+		}
 		if(((LibException)o) == null || ((LibException)o).getExceptionName() == null) {
 			throw new NullPointerException();
 		}
