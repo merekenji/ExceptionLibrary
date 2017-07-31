@@ -1,5 +1,7 @@
 package handler.exception;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -24,7 +26,7 @@ public class LibraryTest{
 	
 	@Test
 	public void TestExceptionName() {
-		service.execute("", "", new NullPointerException());
+		assertEquals("Success", service.execute("Game Scheduler", "Add Player", new NullPointerException()));
 	}
 	
 }

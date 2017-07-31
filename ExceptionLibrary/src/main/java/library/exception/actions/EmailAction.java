@@ -2,9 +2,9 @@ package library.exception.actions;
 
 import java.util.Map;
 
-public class EmailAction extends Action {
+public class EmailAction extends GeneralAction {
 
-	private EmailAction() {
+	public EmailAction() {
 		
 	}
 	
@@ -13,7 +13,7 @@ public class EmailAction extends Action {
 	}
 	
 	public void executeAction(Map<String, String> attributes) {
-		
+		System.out.println("Email");
 	}
 
 }

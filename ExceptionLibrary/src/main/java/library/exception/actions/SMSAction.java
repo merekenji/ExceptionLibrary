@@ -2,9 +2,9 @@ package library.exception.actions;
 
 import java.util.Map;
 
-public class SMSAction extends Action {
+public class SMSAction extends GeneralAction {
 
-	private SMSAction() {
+	public SMSAction() {
 		
 	}
 	
@@ -13,7 +13,7 @@ public class SMSAction extends Action {
 	}
 	
 	public void executeAction(Map<String, String> attributes) {
-		
+		System.out.println("SMS");
 	}
 
 }

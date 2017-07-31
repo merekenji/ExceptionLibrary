@@ -79,13 +79,13 @@ public class ReadFromXML {
 			for(int k = 0; k < nl.getLength(); k++) {
 				Element el = (Element)nl.item(k);
 				LibException libException = new LibException(projName, modName, el.getAttribute("type"));
-				List<Action> actions = retrieveActions(el.getElementsByTagName("action"), libException);
+				List<Action> actions = retrieveActions(el.getElementsByTagName("action"));
 				exceptionMap.put(libException, actions);
 			}
 		}
 	}
 	
-	private static List<Action> retrieveActions(NodeList nl, LibException libException) {
+	private static List<Action> retrieveActions(NodeList nl) {
 		List<Action> actions = new ArrayList<>();
 		if(nl != null && nl.getLength() > 0) {
 			for(int i=0; i<nl.getLength(); i++) {
@@ -101,7 +101,7 @@ public class ReadFromXML {
 	
 	private static Action retrieveAttribute(Node node) {
 		Action action = null;
-		if(node.getNodeType() == Node.ELEMENT_NODE) {
+		if(node != null && node.getNodeType() == Node.ELEMENT_NODE) {
 			action = new Action(node.getNodeName());
 			for(int k=0; k<node.getAttributes().getLength(); k++) {
 				action.addAttributeToMap(node.getAttributes().item(k).getNodeName(), node.getAttributes().item(k).getNodeValue());

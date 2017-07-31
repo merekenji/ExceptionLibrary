@@ -2,9 +2,9 @@ package library.exception.actions;
 
 import java.util.Map;
 
-public class LogAction extends Action {
+public class LogAction extends GeneralAction {
 
-	private LogAction() {
+	public LogAction() {
 		
 	}
 	
@@ -13,7 +13,7 @@ public class LogAction extends Action {
 	}
 	
 	public void executeAction(Map<String, String> attributes) {
-		
+		System.out.println("Log");
 	}
 
 }

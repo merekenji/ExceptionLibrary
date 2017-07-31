@@ -36,4 +36,16 @@ public class LibException {
 		this.exceptionName = exceptionName;
 	}
 	
+	@Override
+	public boolean equals(Object o) {
+		if(((LibException)o) == null || ((LibException)o).getExceptionName() == null) {
+			throw new NullPointerException();
+		}
+		return ((LibException)o).getExceptionName().equals(this.exceptionName);
+	}
+	@Override
+	public int hashCode() {
+		String name = projectName + moduleName + exceptionName;
+		return name.hashCode();
+	}
 }
